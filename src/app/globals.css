@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #090514;
+  --paper-2: #100b22;
+  --ink: #f4f1ff;
+  --ink-soft: rgba(244, 241, 255, 0.62);
+  --line: rgba(255, 255, 255, 0.1);
+  --violet: #a855f7;
+  --violet-2: #7c3aed;
+  --violet-deep: #2e1065;
+  --violet-soft: rgba(168, 85, 247, 0.16);
+  --teal: #34d399;
+  --teal-soft: rgba(52, 211, 153, 0.14);
+  --rose: #f472b6;
+  --rose-soft: rgba(244, 114, 182, 0.14);
+  --card-bg: rgba(255, 255, 255, 0.045);
+  --surface: rgba(20, 13, 38, 0.55);
+  --glow: rgba(168, 85, 247, 0.35);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-card-bg: var(--card-bg);
+  --font-display: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--violet) 30%, transparent);
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
